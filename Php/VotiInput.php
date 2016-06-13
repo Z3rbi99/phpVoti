@@ -26,7 +26,7 @@ else
 			$opzione = $opzione."<option value='".$mat['materia']."'>".$mat['materia']."</option>";
 		}
 
-echo "ciao";
+
 ?>
 <form name="form1" method="get" action="VotiInput.php">
 	<select name="materia">
