@@ -1,0 +1,72 @@
+CREATE TABLE VOTI
+(
+   Nome character varying(50),
+   Materia character varying(50),
+   Voto real,
+   Professore character varying(50)
+);
+
+
+
+
+
+
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','7','Giacometti');
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','7',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','9',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','3',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','5',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','10',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Matematica','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Complementi di matematica','7',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Complementi di matematica','9',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Sistemi e reti','7',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Sistemi e reti','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Sistemi e reti','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Sistemi e reti','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Sistemi e reti','5',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','10',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','9',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','9',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','3',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Informatica','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','4',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','5',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','7',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','5',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Inglese','9',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','7',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','5',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Italiano','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Storia','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Storia','7',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Storia','6',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Storia','8',Null);
+insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','Storia','7',Null);
+
+
+
+
+
+
+update voti set Professore='Giacometti' where materia = 'Matematica';
+update voti set Professore='Giacometti' where materia = 'Complementi di matematica';
+update voti set Professore='Saturnino' where materia = 'Sistemi e reti';
+update voti set Professore='Tomelleri' where materia = 'Informatica';
+update voti set Professore='Campedelli' where materia = 'Inglese';
+update voti set Professore='Peretti' where materia = 'Italiano';
+update voti set Professore='Peretti' where materia = 'Storia';
+
+
+
+
