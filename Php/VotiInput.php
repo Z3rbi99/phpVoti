@@ -20,7 +20,7 @@ else
 	<select name="materia">
 	<?php 
 if(!isset($_GET['materia']))
-		echo "<option selected>-Seleziona la materia-</option>";
+	echo "<option selected>-Seleziona la materia-</option>";
 
 if (!isset($_GET['materia']))
 	$scelta="";
@@ -40,7 +40,7 @@ while($mat = pg_fetch_assoc($querymaterie)){
 	</select>
 	
 	<input type="submit" value="Dimmi i voti"/>
-	</form>
+	
 	
 	
 	<!-- <input type="text" name="Note" value="<?php echo $Note_input; ?>"/> -->
@@ -49,31 +49,35 @@ while($mat = pg_fetch_assoc($querymaterie)){
 
 <?php
 
-		
 if (isset($_GET['materia'])){
-$input=$_GET['materia'];
+	$input=$_GET['materia'];
 
-if(!$queryinput = @pg_query("select voto,materia from voti
-where materia='".$input."'"))
-die("Errore nella query: " . pg_last_error($conn));
-tabella();
+if(!$queryinput = @pg_query("select voto,materia from voti where materia='".$input."'"))
+	die("Errore nella query: " . pg_last_error($conn));
+
 function tabella(){
-echo <<<EOD
-<table border="1" cellspacing="2" cellpadding="2">
-    <tr>
-        <td><b>VOTO</b></td>
-		<td><b>MATERIA</b></td>
-    </tr>
-EOD;
-while($row = pg_fetch_assoc($queryinput)) {
-    echo "\n\t<tr>\n\t\t<td>".$row['voto']."</td>\n\t\t";
-    echo "<td>".$row['materia']."</td>\n\t\t</tr>";
-}
-echo "</table>";
-};
-?>
+	global $queryinput;
+	echo	"<table border=\"1\" cellspacing=\"2\" cellpadding=\"2\">
+		<tr>
+			<td><b>VOTO</b></td>
+			<td><b>MATERIA</b></td>
+		</tr>";
 
-      
+	while($row = pg_fetch_assoc($queryinput)) {
+		echo "\n\t<tr>\n\t\t<td>".$row['voto']."</td>\n\t\t";
+		echo "<td>".$row['materia']."</td>\n\t\t</tr>";
+	}
+	echo "</table>";
+};
+
+tabella();
+
+
+?>
+<form name="form2" method="get" action="VotiInput.php">
+      <input type="text" name="voto">
+      <input type="submit" value="Aggiungi voto">
+
 <?php
 	if (isset($_GET['voto'])){
 		$voto=$_GET['voto'];
@@ -82,7 +86,7 @@ echo "</table>";
 	}
 }
 ?>
-
+</form>
 
 
 
