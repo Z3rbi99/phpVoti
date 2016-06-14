@@ -14,19 +14,7 @@ else
 
 	if(!$querymaterie = @pg_query("select distinct materia from voti"))
 	die("Errore nella query: " . pg_last_error($conn));
-		
-	if(!isset($_GET['materia']))
-		$seleziona = "<option selected>-Seleziona la materia-</option>";
 	
-	$opzione = '';
-	while($mat = pg_fetch_assoc($querymaterie)){
-		if ($_GET['materia']==$mat['materia'])
-			$opzione = $opzione."<option value='".$mat['materia']."' selected>".$mat['materia']."</option>";
-		else
-			$opzione = $opzione."<option value='".$mat['materia']."'>".$mat['materia']."</option>";
-		}
-
-
 ?>
 <form name="form1" method="get" action="VotiInput.php">
 	<select name="materia">
@@ -42,6 +30,18 @@ else
 	
 
 <?php
+if(!isset($_GET['materia']))
+		$seleziona = "<option selected>-Seleziona la materia-</option>";
+	
+$opzione = '';
+
+while($mat = pg_fetch_assoc($querymaterie)){
+		if ($_GET['materia']==$mat['materia'])
+			$opzione = $opzione."<option value='".$mat['materia']."' selected>".$mat['materia']."</option>";
+		else
+			$opzione = $opzione."<option value='".$mat['materia']."'>".$mat['materia']."</option>";
+		}
+		
 if (isset($_GET['materia'])){
 $input=$_GET['materia'];
 
