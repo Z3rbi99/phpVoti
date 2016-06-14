@@ -18,22 +18,9 @@ else
 ?>
 <form name="form1" method="get" action="VotiInput.php">
 	<select name="materia">
-	<?php echo $seleziona."ciao".$opzione; ?>
-	</select>
-	
-	<input type="submit" value="Dimmi i voti"/>
-	
-	
-	
-	<!-- <input type="text" name="Note" value="<?php echo $Note_input; ?>"/> -->
-	
-	
-
-<?php
+	<?php 
 if(!isset($_GET['materia']))
-		$seleziona = "<option selected>-Seleziona la materia-</option>";
-	
-$opzione = '';
+		echo "<option selected>-Seleziona la materia-</option>";
 
 if (!isset($_GET['materia']))
 	$scelta="";
@@ -43,10 +30,25 @@ else
 
 while($mat = pg_fetch_assoc($querymaterie)){
 		if ($scelta==$mat['materia'])
-			$opzione = $opzione."<option value='".$mat['materia']."' selected>".$mat['materia']."</option>";
+			echo"<option value='".$mat['materia']."' selected>".$mat['materia']."</option>";
 		else
-			$opzione = $opzione."<option value='".$mat['materia']."'>".$mat['materia']."</option>";
+			echo"<option value='".$mat['materia']."'>".$mat['materia']."</option>";
 		}
+
+
+	?>
+	</select>
+	
+	<input type="submit" value="Dimmi i voti"/>
+	</form>
+	
+	
+	<!-- <input type="text" name="Note" value="<?php echo $Note_input; ?>"/> -->
+	
+	
+
+<?php
+
 		
 if (isset($_GET['materia'])){
 $input=$_GET['materia'];
