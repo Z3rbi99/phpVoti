@@ -79,11 +79,11 @@ tabella();
       <input type="submit" value="Aggiungi voto">
 
 <?php
-	if (isset($_GET['voto'])){
-		$voto=$_GET['voto'];
-		if(!$queryaggiungi = @pg_query("insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','".$_GET['materia']."','".$_GET['voto']."',Null);"))
+	if ($_GET['voto']!=Null){
+		if(!$queryaggiungi = @pg_query("insert into VOTI (Nome,Materia,Voto,Professore) values ('Iacopo','".$_GET['materia']."','".$_GET['voto']."',Null)"))
 		die("Errore nella query: " . pg_last_error($conn));
-	}
+
+}
 }
 ?>
 </form>
