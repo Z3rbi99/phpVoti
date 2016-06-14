@@ -35,8 +35,14 @@ if(!isset($_GET['materia']))
 	
 $opzione = '';
 
+if (!isset($_GET['materia']))
+	$scelta="";
+else
+	$scelta=$_GET['materia'];
+	
+
 while($mat = pg_fetch_assoc($querymaterie)){
-		if ($_GET['materia']==$mat['materia'])
+		if ($scelta==$mat['materia'])
 			$opzione = $opzione."<option value='".$mat['materia']."' selected>".$mat['materia']."</option>";
 		else
 			$opzione = $opzione."<option value='".$mat['materia']."'>".$mat['materia']."</option>";
@@ -65,9 +71,7 @@ echo "</table>";
 };
 ?>
 
-      <input type="text" name="voto">
-      <input type="submit" value="Aggiungi voto">
-</form>
+      
 <?php
 	if (isset($_GET['voto'])){
 		$voto=$_GET['voto'];
